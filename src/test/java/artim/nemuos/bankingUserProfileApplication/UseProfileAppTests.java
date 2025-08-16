@@ -1,13 +1,9 @@
-package artim.nemuos.serviceName;
+package artim.nemuos.bankingUserProfileApplication;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ServiceNameApplicationTests {
-
-	@Test
-	void contextLoads() {
-	}
+class UseProfileAppTests {
 
 }
