@@ -18,16 +18,21 @@ public class UserProfile {
     @Column(name = "user_id", nullable = false)
     private String userId;
     private String password;
+
+    private String firstname;
+
+    private String lastname;
     private int age;
     private String phoneNumber;
     private String email;
     private String address;
     private String pincode;
-    private String[] accountIds;
 
-    public UserProfile(String userId, String password, int age, String phoneNumber, String email, String address, String pincode, String[] accountIds) {
+    public UserProfile(String userId, String password, String firstname, String lastname, int age, String phoneNumber, String email, String address, String pincode) {
         this.userId = userId;
         this.password = password;
+        this.firstname = firstname;
+        this.lastname = lastname;
         this.age = age;
         if(!ProfileValidatorUtilities.isValidPhoneNumber(phoneNumber)) throw new RuntimeException("Invalid Phone Number exception");
         this.phoneNumber = phoneNumber;
@@ -35,7 +40,6 @@ public class UserProfile {
         this.email = email;
         this.address = address;
         this.pincode = pincode;
-        this.accountIds = accountIds;
     }
 
     @Override
@@ -47,7 +51,6 @@ public class UserProfile {
                 ", email='" + Masker.maskEmail(email) + '\'' +
                 ", address='" + address + '\'' +
                 ", pincode='" + pincode + '\'' +
-                ", accountIds=" + Arrays.toString(accountIds) +
                 '}';
     }
 }
